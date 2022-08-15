@@ -17,20 +17,10 @@ var appleY = 10;
 var score = 0;
 var gameOver = "Game  Over"
 
-
-
-
 function loop() {
     draw();
     update();
     pause();
-    
-
-
-
-
-
-
 }
 
 function draw() {
@@ -48,7 +38,6 @@ function draw() {
     context.fillText(score, 20, 40);
 
     context.fillStyle = "green"
-
 }
 
 function update() {
@@ -74,9 +63,6 @@ function update() {
         posY = 0;
     }
 
-
-
-
     snakes.push({ posX: this.posX, posY: this.posY });
     snakes.forEach(t => {
         if (snakes.length > score)
@@ -87,7 +73,6 @@ function update() {
         appleX = Math.floor(Math.random() * 20);
         appleY = Math.floor(Math.random() * 20);
     }
-
 }
 
 function key(key) {
@@ -111,10 +96,6 @@ function key(key) {
         vy = 0
     }
 
-
-
-
-
 }
 function pause() {
     for (i = 1; i < snakes.length; i++) {
@@ -124,30 +105,29 @@ function pause() {
             snakes.length = 1;
             score = 0;
             context.fillStyle = "red"
-            context.fillText(gameOver, 140, 200)}
-        if(key.keyCode === 87 && vy != 1) {
-            vx = 0
-            vy = 0
-            score = 0
-            
+            context.fillText(gameOver, 140, 200)
         }
-            else if (key.keyCode === 83 && vy != -1) {
-            vx = 0
-            vy = 0
-            score = 0
-            
-        }
-            else if (key.keyCode === 68 && vx != -1) {
-            vx = 0
-            vy = 0
-            score = 0
-        }
-            else if (key.keyCode === 65 && vx != 1) {
+        if (key.keyCode === 87 && vy != 1) {
             vx = 0
             vy = 0
             score = 0
 
         }
+        else if (key.keyCode === 83 && vy != -1) {
+            vx = 0
+            vy = 0
+            score = 0
+
+        }
+        else if (key.keyCode === 68 && vx != -1) {
+            vx = 0
+            vy = 0
+            score = 0
+        }
+        else if (key.keyCode === 65 && vx != 1) {
+            vx = 0
+            vy = 0
+            score = 0
+        }
     }
-    
 }    
